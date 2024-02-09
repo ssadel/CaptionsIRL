@@ -26,7 +26,7 @@ struct TranscribingView: View {
     
     var body: some View {
         
-        ScrollView {
+        ScrollView(.vertical) {
             LazyVStack {
                 Text("Say something to begin transcribing ✏️")
                     .font(.headline.weight(.regular).italic())
@@ -35,14 +35,16 @@ struct TranscribingView: View {
                 
                 Text(text)
                     .font(.largeFont)
-                    .padding([.horizontal, .bottom], 50)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                    .shadow(radius: 4)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .id(ScrollPosition.middle)
                 
                 Text("")
                     .id(ScrollPosition.bottom)
+                    .padding(.bottom)
             }
             .scrollTargetLayout()
+            .frame(width: Sizes.windowSize.width * 0.9)
         }
         .defaultScrollAnchor(.bottom)
         .scrollPosition(id: $scrollPosition, anchor: .bottom)

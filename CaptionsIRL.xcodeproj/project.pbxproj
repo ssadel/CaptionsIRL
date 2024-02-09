@@ -15,6 +15,7 @@
 		C247AE632B75B893002E7D4D /* TranscribingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE622B75B893002E7D4D /* TranscribingView.swift */; };
 		C247AE652B75B987002E7D4D /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE642B75B987002E7D4D /* Env.swift */; };
 		C247AE682B75BC0C002E7D4D /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE672B75BC0C002E7D4D /* Font+Ex.swift */; };
+		C247AE6A2B75C783002E7D4D /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE692B75C783002E7D4D /* Sizes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C247AE622B75B893002E7D4D /* TranscribingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribingView.swift; sourceTree = "<group>"; };
 		C247AE642B75B987002E7D4D /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		C247AE672B75BC0C002E7D4D /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
+		C247AE692B75C783002E7D4D /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		C247AE662B75BBFF002E7D4D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C247AE692B75C783002E7D4D /* Sizes.swift */,
 				C247AE672B75BC0C002E7D4D /* Font+Ex.swift */,
 			);
 			path = Utils;
@@ -207,6 +210,7 @@
 				C247AE632B75B893002E7D4D /* TranscribingView.swift in Sources */,
 				C247AE612B75B4ED002E7D4D /* Transcriber.swift in Sources */,
 				C247AE682B75BC0C002E7D4D /* Font+Ex.swift in Sources */,
+				C247AE6A2B75C783002E7D4D /* Sizes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

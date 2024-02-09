@@ -29,7 +29,7 @@ struct DashboardView: View {
                 .padding(.top, 10)
             }
         }
-        .frame(width: 800, height: 500)
+        .frame(width: Sizes.windowSize.width, height: Sizes.windowSize.height)
         .glassBackgroundEffect()
     }
 }

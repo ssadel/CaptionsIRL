@@ -22,7 +22,7 @@ final class Transcriber {
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
-    private let speechRecognizer: SFSpeechRecognizer! = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+    private let speechRecognizer: SFSpeechRecognizer! = { SFSpeechRecognizer() ?? SFSpeechRecognizer(locale: Locale(identifier: "en-US")) }()
     private let audioEngine = AVAudioEngine()
     
     func start() throws {
@@ -52,7 +52,6 @@ final class Transcriber {
             }
         }
         
-        // Configure the microphone input.
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             self.recognitionRequest?.append(buffer)

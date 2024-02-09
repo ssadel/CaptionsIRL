@@ -14,6 +14,11 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 15) {
+                Image(.logo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 70, height: 70)
+                    .clipShape(Circle())
                 Text("Welcome to IRL Captions 👋")
                     .font(.extraLargeTitle.weight(.heavy))
                     .lineLimit(1)

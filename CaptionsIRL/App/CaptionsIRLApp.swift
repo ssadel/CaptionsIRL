@@ -11,11 +11,8 @@ import SwiftUI
 struct CaptionsIRLApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DashboardView()
         }
-
-        ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView()
-        }
+        .windowResizability(.contentSize)
     }
 }

@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C247AE492B75B457002E7D4D /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = C247AE482B75B457002E7D4D /* RealityKitContent */; };
 		C247AE4B2B75B457002E7D4D /* CaptionsIRLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE4A2B75B457002E7D4D /* CaptionsIRLApp.swift */; };
-		C247AE4D2B75B457002E7D4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE4C2B75B457002E7D4D /* ContentView.swift */; };
-		C247AE4F2B75B457002E7D4D /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE4E2B75B457002E7D4D /* ImmersiveView.swift */; };
+		C247AE4D2B75B457002E7D4D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE4C2B75B457002E7D4D /* DashboardView.swift */; };
 		C247AE512B75B459002E7D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C247AE502B75B459002E7D4D /* Assets.xcassets */; };
 		C247AE542B75B459002E7D4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C247AE532B75B459002E7D4D /* Preview Assets.xcassets */; };
+		C247AE612B75B4ED002E7D4D /* Transcriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE602B75B4ED002E7D4D /* Transcriber.swift */; };
+		C247AE632B75B893002E7D4D /* TranscribingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE622B75B893002E7D4D /* TranscribingView.swift */; };
+		C247AE652B75B987002E7D4D /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE642B75B987002E7D4D /* Env.swift */; };
+		C247AE682B75BC0C002E7D4D /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE672B75BC0C002E7D4D /* Font+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C247AE432B75B457002E7D4D /* CaptionsIRL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaptionsIRL.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C247AE472B75B457002E7D4D /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		C247AE4A2B75B457002E7D4D /* CaptionsIRLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionsIRLApp.swift; sourceTree = "<group>"; };
-		C247AE4C2B75B457002E7D4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C247AE4E2B75B457002E7D4D /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		C247AE4C2B75B457002E7D4D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C247AE502B75B459002E7D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C247AE532B75B459002E7D4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C247AE552B75B459002E7D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C247AE602B75B4ED002E7D4D /* Transcriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcriber.swift; sourceTree = "<group>"; };
+		C247AE622B75B893002E7D4D /* TranscribingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscribingView.swift; sourceTree = "<group>"; };
+		C247AE642B75B987002E7D4D /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		C247AE672B75BC0C002E7D4D /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C247AE492B75B457002E7D4D /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				C247AE452B75B457002E7D4D /* CaptionsIRL */,
-				C247AE462B75B457002E7D4D /* Packages */,
 				C247AE442B75B457002E7D4D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,22 +60,15 @@
 		C247AE452B75B457002E7D4D /* CaptionsIRL */ = {
 			isa = PBXGroup;
 			children = (
-				C247AE4A2B75B457002E7D4D /* CaptionsIRLApp.swift */,
-				C247AE4C2B75B457002E7D4D /* ContentView.swift */,
-				C247AE4E2B75B457002E7D4D /* ImmersiveView.swift */,
-				C247AE502B75B459002E7D4D /* Assets.xcassets */,
-				C247AE552B75B459002E7D4D /* Info.plist */,
+				C247AE5B2B75B485002E7D4D /* App */,
+				C247AE5D2B75B491002E7D4D /* Assets */,
+				C247AE5E2B75B49B002E7D4D /* Config */,
+				C247AE5F2B75B4DC002E7D4D /* Services */,
+				C247AE662B75BBFF002E7D4D /* Utils */,
+				C247AE5C2B75B48A002E7D4D /* Views */,
 				C247AE522B75B459002E7D4D /* Preview Content */,
 			);
 			path = CaptionsIRL;
-			sourceTree = "<group>";
-		};
-		C247AE462B75B457002E7D4D /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				C247AE472B75B457002E7D4D /* RealityKitContent */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		C247AE522B75B459002E7D4D /* Preview Content */ = {
@@ -82,6 +77,56 @@
 				C247AE532B75B459002E7D4D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C247AE5B2B75B485002E7D4D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C247AE4A2B75B457002E7D4D /* CaptionsIRLApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C247AE5C2B75B48A002E7D4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C247AE4C2B75B457002E7D4D /* DashboardView.swift */,
+				C247AE622B75B893002E7D4D /* TranscribingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C247AE5D2B75B491002E7D4D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C247AE502B75B459002E7D4D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C247AE5E2B75B49B002E7D4D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C247AE552B75B459002E7D4D /* Info.plist */,
+				C247AE642B75B987002E7D4D /* Env.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C247AE5F2B75B4DC002E7D4D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C247AE602B75B4ED002E7D4D /* Transcriber.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C247AE662B75BBFF002E7D4D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C247AE672B75BC0C002E7D4D /* Font+Ex.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,7 +146,6 @@
 			);
 			name = CaptionsIRL;
 			packageProductDependencies = (
-				C247AE482B75B457002E7D4D /* RealityKitContent */,
 			);
 			productName = CaptionsIRL;
 			productReference = C247AE432B75B457002E7D4D /* CaptionsIRL.app */;
@@ -157,9 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C247AE4D2B75B457002E7D4D /* ContentView.swift in Sources */,
+				C247AE652B75B987002E7D4D /* Env.swift in Sources */,
+				C247AE4D2B75B457002E7D4D /* DashboardView.swift in Sources */,
 				C247AE4B2B75B457002E7D4D /* CaptionsIRLApp.swift in Sources */,
-				C247AE4F2B75B457002E7D4D /* ImmersiveView.swift in Sources */,
+				C247AE632B75B893002E7D4D /* TranscribingView.swift in Sources */,
+				C247AE612B75B4ED002E7D4D /* Transcriber.swift in Sources */,
+				C247AE682B75BC0C002E7D4D /* Font+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +343,8 @@
 				DEVELOPMENT_TEAM = WF6F5UBRBL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_FILE = "$(TARGET_NAME)/Config/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use your microphone to transcribe what you are saying";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,7 +370,8 @@
 				DEVELOPMENT_TEAM = WF6F5UBRBL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_FILE = "$(TARGET_NAME)/Config/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use your microphone to transcribe what you are saying";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -359,13 +408,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C247AE482B75B457002E7D4D /* RealityKitContent */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RealityKitContent;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C247AE3B2B75B457002E7D4D /* Project object */;
 }

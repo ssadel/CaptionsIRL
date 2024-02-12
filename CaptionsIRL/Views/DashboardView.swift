@@ -39,7 +39,7 @@ struct DashboardView: View {
         .glassBackgroundEffect()
         .onAppear {
             sessionCount += 1
-            if sessionCount == 1 || sessionCount == 10 {
+            if sessionCount == 2 || sessionCount == 10 {
                 ReviewHelper.requestReview()
             }
         }

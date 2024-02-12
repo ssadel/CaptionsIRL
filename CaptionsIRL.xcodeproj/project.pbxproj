@@ -16,6 +16,7 @@
 		C247AE652B75B987002E7D4D /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE642B75B987002E7D4D /* Env.swift */; };
 		C247AE682B75BC0C002E7D4D /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE672B75BC0C002E7D4D /* Font+Ex.swift */; };
 		C247AE6A2B75C783002E7D4D /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C247AE692B75C783002E7D4D /* Sizes.swift */; };
+		C2603F5F2B7A8CDC005AB0A0 /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2603F5E2B7A8CDC005AB0A0 /* ReviewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C247AE642B75B987002E7D4D /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		C247AE672B75BC0C002E7D4D /* Font+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
 		C247AE692B75C783002E7D4D /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		C2603F5E2B7A8CDC005AB0A0 /* ReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C247AE602B75B4ED002E7D4D /* Transcriber.swift */,
+				C2603F5E2B7A8CDC005AB0A0 /* ReviewHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				C247AE612B75B4ED002E7D4D /* Transcriber.swift in Sources */,
 				C247AE682B75BC0C002E7D4D /* Font+Ex.swift in Sources */,
 				C247AE6A2B75C783002E7D4D /* Sizes.swift in Sources */,
+				C2603F5F2B7A8CDC005AB0A0 /* ReviewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import RealityKit
 
 struct DashboardView: View {
     @State private var transcriber: Transcriber = .init()
+    @AppStorage("sessionCount") var sessionCount: Int = 0
     
     var body: some View {
         NavigationStack {
@@ -36,6 +37,12 @@ struct DashboardView: View {
         }
         .frame(width: Sizes.windowSize.width, height: Sizes.windowSize.height)
         .glassBackgroundEffect()
+        .onAppear {
+            sessionCount += 1
+            if sessionCount == 1 || sessionCount == 10 {
+                ReviewHelper.requestReview()
+            }
+        }
     }
 }
 

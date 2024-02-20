@@ -63,7 +63,6 @@ final class Transcriber {
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             self?.transcribedText = result?.bestTranscription.formattedString ?? ""
             self?.segments = result?.bestTranscription.segments ?? []
-            print("isFInal: \(result?.isFinal ?? false) / \(result?.bestTranscription.segments)")
         }
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
 //            self?.transcribedText.removeAll()

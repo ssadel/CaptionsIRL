@@ -19,10 +19,15 @@ final class Transcriber {
     
     private(set) var isRecording: Bool = false
     private(set) var transcribedText: String = ""
+    private(set) var segments: [SFTranscriptionSegment] = []
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
-    private let speechRecognizer: SFSpeechRecognizer! = { SFSpeechRecognizer() ?? SFSpeechRecognizer(locale: Locale(identifier: "en-US")) }()
+    private let speechRecognizer: SFSpeechRecognizer! = {
+        let recognizer = SFSpeechRecognizer() ?? SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+        recognizer?.defaultTaskHint = .dictation
+        return recognizer
+    }()
     private let audioEngine = AVAudioEngine()
     
     func start() throws {
@@ -56,14 +61,14 @@ final class Transcriber {
         }
         recognitionTask?.cancel()
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
-            if let str = result?.bestTranscription.formattedString, !str.isEmpty {
-                self?.transcribedText = str
-                print("DEBUG: ", str)
-            }
+            self?.transcribedText = result?.bestTranscription.formattedString ?? ""
+            self?.segments = result?.bestTranscription.segments ?? []
+            print("isFInal: \(result?.isFinal ?? false) / \(result?.bestTranscription.segments)")
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.transcribedText.removeAll()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+//            self?.transcribedText.removeAll()
+//            self?.segments.removeAll()
+//        }
     }
     
     func stop() {

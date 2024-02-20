@@ -17,5 +17,10 @@ struct CaptionsIRLApp: App {
                 .environment(transcriber)
         }
         .windowResizability(.contentSize)
+        
+        ImmersiveSpace(id: "Immersive") {
+            ImmersiveView()
+                .environment(transcriber)
+        }
     }
 }

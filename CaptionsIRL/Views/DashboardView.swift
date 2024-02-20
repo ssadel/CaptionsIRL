@@ -9,7 +9,7 @@ import SwiftUI
 import RealityKit
 
 struct DashboardView: View {
-    @State private var transcriber: Transcriber = .init()
+    @Environment(Transcriber.self) var transcriber
     @AppStorage("sessionCount") var sessionCount: Int = 0
     
     var body: some View {

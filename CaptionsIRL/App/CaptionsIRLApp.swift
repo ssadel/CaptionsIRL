@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CaptionsIRLApp: App {
+    @State private var transcriber: Transcriber = .init()
+    
     var body: some Scene {
         WindowGroup {
             DashboardView()
+                .environment(transcriber)
         }
         .windowResizability(.contentSize)
     }

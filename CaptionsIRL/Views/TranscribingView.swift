@@ -19,9 +19,10 @@ struct TranscribingView: View {
     
     @State private var scrollPosition: ScrollPosition?
     @State private var showBottomToast: Bool = false
+    @State private var showClearConfirmation: Bool = false
     
     var text: String {
-        transcriber.transribedText
+        transcriber.transcribedText
     }
     
     var body: some View {
@@ -57,6 +58,22 @@ struct TranscribingView: View {
             showBottomToast = true
         }
         .animation(.interactiveSpring, value: showBottomToast)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showClearConfirmation = true
+                } label: {
+                    Text("Clear")
+                }
+                .confirmationDialog("Are you sure you want to clear the transcription?", isPresented: $showClearConfirmation, titleVisibility: .visible) {
+                    Button {
+                        try? transcriber.setupNewTask()
+                    } label: {
+                        Text("Clear")
+                    }
+                }
+            }
+        }
         .onAppear {
             guard !Env.isPreview else { return }
             

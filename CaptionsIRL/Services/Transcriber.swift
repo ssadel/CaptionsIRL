@@ -18,7 +18,7 @@ final class Transcriber {
     }
     
     private(set) var isRecording: Bool = false
-    private(set) var transribedText: String = ""
+    private(set) var transcribedText: String = ""
     
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -37,20 +37,8 @@ final class Transcriber {
         let inputNode = audioEngine.inputNode
         
         self.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        guard let recognitionRequest = self.recognitionRequest else {
-            throw Self.TranscriberError.failedToConfigRequest
-        }
         
-        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
-            if let str = result?.bestTranscription.formattedString, !str.isEmpty {
-                self?.transribedText = str
-                print("DEBUG: ", str)
-            }
-            
-            if error != nil || result?.isFinal == true {
-                self?.stop()
-            }
-        }
+        try self.setupNewTask()
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
@@ -60,6 +48,22 @@ final class Transcriber {
         audioEngine.prepare()
         try audioEngine.start()
         isRecording = true
+    }
+    
+    func setupNewTask() throws {
+        guard let recognitionRequest = self.recognitionRequest else {
+            throw Self.TranscriberError.failedToConfigRequest
+        }
+        recognitionTask?.cancel()
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
+            if let str = result?.bestTranscription.formattedString, !str.isEmpty {
+                self?.transcribedText = str
+                print("DEBUG: ", str)
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.transcribedText.removeAll()
+        }
     }
     
     func stop() {
